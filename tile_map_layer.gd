@@ -1,7 +1,5 @@
 extends TileMapLayer
 
-const Crop = preload("res://crop.tscn")
-var tile_map
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var filled_tiles := get_used_cells()

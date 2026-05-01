@@ -1,6 +1,5 @@
 extends TileMapLayer
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var filled_tiles := get_used_cells()

@@ -1,14 +1,33 @@
 extends CharacterBody2D
 
 @export var inv: Inv
+const SPEED = 70.0
+var on_stairs: bool = true
+
+
+func cartesian_to_isometric(cartesian):
+	var iso: Vector2
+	if  on_stairs:
+		iso = Vector2(cartesian.x - cartesian.y, (cartesian.x + cartesian.y))
+	else:
+		iso = Vector2(cartesian.x - cartesian.y, (cartesian.x + cartesian.y)/2)
+	return iso
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	if direction != Vector2.ZERO:
-		velocity = direction * 32.0
+		velocity = direction * SPEED
 	else:
 		velocity = Vector2.ZERO
+	velocity = cartesian_to_isometric(velocity)
 	move_and_slide()
-
+	
 func collect(item):
 	inv.insert(item)
+
+
+func _on_stair_box_body_entered(body: Node2D) -> void:
+		on_stairs = !on_stairs
+
+func _on_stair_box_body_exited(body: Node2D) -> void:
+		on_stairs = !on_stairs

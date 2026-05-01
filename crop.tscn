@@ -1,17 +1,25 @@
 [gd_scene format=3 uid="uid://dwqt8irg8o6vv"]
 
-[ext_resource type="Script" uid="uid://bvaht3yalf4gn" path="res://crop/crop.gd" id="1_reckc"]
+[ext_resource type="Script" uid="uid://bvaht3yalf4gn" path="res://crop.gd" id="1_doysg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wgfa3"]
+radius = 2.5
 
 [node name="Crop" type="Node2D" unique_id=43826360]
-script = ExtResource("1_reckc")
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_doysg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=706984071]
+position = Vector2(-16, -32)
+centered = false
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1629963534]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1288216300]
-
 [node name="growth_timer" type="Timer" parent="." unique_id=1244193819]
+wait_time = 2.0
+one_shot = true
 
 [node name="harvest_area" type="Area2D" parent="." unique_id=749191236]
 

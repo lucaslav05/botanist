@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://dnvsekxt2stcq"]
 
 [ext_resource type="Texture2D" uid="uid://mg6iyt4g2jot" path="res://StarterTileset32.png" id="1_0f027"]
+[ext_resource type="Script" uid="uid://byc46ulcfiu05" path="res://main_scene.gd" id="1_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://bw6nk5rbhicun" path="res://player.tscn" id="2_2c62f"]
 [ext_resource type="Script" uid="uid://dpfaion562i6t" path="res://tile_map_layer.gd" id="2_gyfs4"]
-[ext_resource type="Script" uid="uid://bvaht3yalf4gn" path="res://crop/crop.gd" id="4_d5x1h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2c62f"]
 texture = ExtResource("1_0f027")
@@ -36,6 +36,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2c62f")
 
 [node name="Node2D" type="Node2D" unique_id=1973949678]
+script = ExtResource("1_d5x1h")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1807765842]
 y_sort_enabled = true
@@ -49,8 +50,3 @@ position = Vector2(15, 5)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=357529765]
 zoom = Vector2(3, 3)
-
-[node name="Crop" type="Node2D" parent="." unique_id=2002108156]
-script = ExtResource("4_d5x1h")
-
-[node name="Sprite2D" type="Sprite2D" parent="Crop" unique_id=1096248243]

@@ -25,7 +25,6 @@ func _physics_process(delta: float) -> void:
 func collect(item):
 	inv.insert(item)
 
-
 func _on_stair_box_body_entered(body: Node2D) -> void:
 		on_stairs = !on_stairs
 

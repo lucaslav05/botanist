@@ -1,16 +1,14 @@
 extends Node2D
 
 const Crop = preload("res://crop/crop.tscn")
-var tile_map
+@onready var tile_map = $WorldTileMap.get_used_cells_by_id(0, Vector2i(2, 0))
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	tile_map = $WorldTileMap.get_used_cells_by_id(0, Vector2i(2, 0))
+	fill_all_plots()
+	pass
 	
-	for tile in tile_map:
-		plant_seed(tile)
-		print(tile)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -27,3 +25,9 @@ func plant_seed(v2i: Vector2i):
 	c.get_child(0).position += Vector2(0, tile_size.y*2)
 	c.get_child(0).offset.y = -32
 	$Plants.add_child(c)
+
+# DEBUG FUNCTION
+func fill_all_plots():
+	for tile in tile_map:
+		plant_seed(tile)
+		print(tile)

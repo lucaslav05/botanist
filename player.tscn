@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bw6nk5rbhicun"]
+
+[ext_resource type="Script" uid="uid://d35fqseflgmc" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://b2n5qskiklfme" path="res://Fplayer Standing.png" id="2_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
+radius = 4.0
+
+[node name="Player" type="CharacterBody2D" unique_id=593470462]
+z_index = 2
+texture_filter = 1
+motion_mode = 1
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=444830237]
+shape = SubResource("CircleShape2D_hqtel")
+
+[node name="FplayerStanding" type="Sprite2D" parent="." unique_id=1485040219]
+texture_filter = 1
+position = Vector2(0, -16)
+texture = ExtResource("2_i3pqv")

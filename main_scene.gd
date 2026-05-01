@@ -1,6 +1,6 @@
 extends Node2D
 
-const Crop = preload("res://crop.tscn")
+const Crop = preload("res://crop/crop.tscn")
 var tile_map
 
 

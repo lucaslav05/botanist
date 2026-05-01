@@ -24,8 +24,14 @@ func _process(delta: float) -> void:
 		$Sprite2D.texture = flowerTexture
 		if player_in_area:
 			if Input.is_action_just_pressed("e"):
+				print("SHOULD HARVEST")
 				state = "no flower"
 				drop_flower()
 				
 func drop_flower():
 	pass
+
+
+func _on_harvest_body_entered(body: Node2D):
+	if body.name == "player":
+		print("entered")

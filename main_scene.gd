@@ -7,8 +7,6 @@ const Crop = preload("res://crop/crop.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	fill_all_plots()
-	pass
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

@@ -35,14 +35,13 @@ tile_size = Vector2i(32, 16)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_2c62f")
 
-[node name="Node2D" type="Node2D" unique_id=1973949678]
-y_sort_enabled = true
-script = ExtResource("1_d5x1h")
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d5x1h"]
 radius = 15.627071
 height = 48.62
 
 [node name="Node2D" type="Node2D" unique_id=1973949678]
+y_sort_enabled = true
+script = ExtResource("1_d5x1h")
 
 [node name="WorldTileMap" type="TileMapLayer" parent="." unique_id=1807765842]
 y_sort_enabled = true
@@ -51,20 +50,15 @@ tile_map_data = PackedByteArray("AAAAAP7/AAADAAEAAAD///3/AAADAAEAAAAAAPz/AAADAAE
 tile_set = SubResource("TileSet_gyfs4")
 script = ExtResource("2_gyfs4")
 
-[node name="Plants" type="Node2D" parent="." unique_id=344132016]
-z_index = 1
-y_sort_enabled = true
-
 [node name="Player" parent="." unique_id=593470462 instance=ExtResource("2_2c62f")]
 position = Vector2(15, 5)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=357529765]
 zoom = Vector2(3, 3)
 
-[node name="Crop" type="Node2D" parent="." unique_id=2002108156]
-script = ExtResource("4_d5x1h")
-
-[node name="Sprite2D" type="Sprite2D" parent="Crop" unique_id=1096248243]
+[node name="Plants" type="Node2D" parent="." unique_id=344132016]
+z_index = 1
+y_sort_enabled = true
 
 [node name="StairBox" type="Area2D" parent="." unique_id=1779090961 groups=["StairBox"]]
 position = Vector2(40, -36)

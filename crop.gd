@@ -11,8 +11,6 @@ var player_in_area = false
 func _ready() -> void:
 	if state == "no flower":
 		$growth_timer.start()
-	
-	#get_child(0).texture = null
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -31,4 +29,3 @@ func _process(delta: float) -> void:
 				
 func drop_flower():
 	pass
-		

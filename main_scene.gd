@@ -3,7 +3,6 @@ extends Node2D
 const Crop = preload("res://crop/crop.tscn")
 @onready var tile_map = $WorldTileMap.get_used_cells_by_id(0, Vector2i(2, 0))
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	fill_all_plots()
@@ -31,7 +30,7 @@ func plant_seed(v2i: Vector2i):
 	
 	# Connecting Signal to player for harvestable area
 	#c.get_child(3).body_entered.connect(_on_harvest_area_body_entered)
-
+	
 # DEBUG FUNCTION
 func fill_all_plots():
 	for tile in tile_map:

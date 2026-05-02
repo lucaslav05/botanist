@@ -3,10 +3,13 @@ extends Node2D
 const Crop = preload("res://crop/crop.tscn")
 
 @onready var tile_map = $WorldTileMap.get_used_cells_by_id(0, Vector2i(2, 0))
+
+# stores Vector2i : bool (false if vacant, true if plant is there)
 @export var tile_status = {}
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	
 	for tile in tile_map:
 		tile_status[tile] = false
 
@@ -29,6 +32,7 @@ func plant_seed(v2i: Vector2i):
 	c.get_child(0).position += Vector2(0, tile_size.y*2)
 	c.get_child(0).offset.y = -32
 	
+	c.location = v2i
 	$Plants.add_child(c)
 
 # DEBUG FUNCTION

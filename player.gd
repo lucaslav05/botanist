@@ -31,7 +31,9 @@ func _process(delta):
 	if Input.is_action_just_pressed("e"):
 		var tile_pos: Vector2i = tile_map_layer_ref.local_to_map(global_position)
 		if tile_pos in get_parent().tile_status:
-			get_parent().plant_seed(tile_pos)
+			if get_parent().tile_status[tile_pos] == false:
+				get_parent().plant_seed(tile_pos)
+				get_parent().tile_status[tile_pos] = true
 
 func collect(item):
 	inv.insert(item)

@@ -10,7 +10,6 @@ var index: int
 
 func insert(isg: ItemStackGui):
 	itemStackGui = isg
-	background.frame = 1
 	container.add_child(itemStackGui)
 	
 	if !itemStackGui.inventorySlot or inventory.slots[index] == itemStackGui.inventorySlot:
@@ -32,5 +31,4 @@ func clear():
 	if itemStackGui:
 		container.remove_child(itemStackGui)
 		itemStackGui = null
-		background.frame = 0
 	

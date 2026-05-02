@@ -39,14 +39,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	get_input()
 	set_direction()
-	move()
-	
-	if Input.is_action_just_pressed("e"):
-		var tile_pos: Vector2i = tile_map_layer_ref.local_to_map(global_position)
-		if tile_pos in get_parent().tile_status:
-			if get_parent().tile_status[tile_pos] == false:
-				get_parent().plant_seed(tile_pos)
-				get_parent().tile_status[tile_pos] = true
+	move()		
 	
 func get_input():
 	if Input.is_action_pressed("ui_up"): KEY_UP = true
@@ -173,7 +166,11 @@ func _on_stair_box_body_exited(body: Node2D) -> void:
 		on_stairs = !on_stairs
 		
 func plant_seed():
-	pass
+	var tile_pos: Vector2i = tile_map_layer_ref.local_to_map(global_position)
+	if tile_pos in get_parent().tile_status:
+		if get_parent().tile_status[tile_pos] == false:
+			get_parent().plant_seed(tile_pos)
+			get_parent().tile_status[tile_pos] = true
 	
 func use_item(item: InvItem):
 	item.use(self)

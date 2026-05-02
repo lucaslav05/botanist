@@ -4,6 +4,7 @@ var state = "no flower"
 var player_in_area = false
 var player = null
 var harvested = false
+var location : Vector2i
 
 var flower = preload("res://inventory/items/flower_collectable.tscn")
 
@@ -32,7 +33,8 @@ func _process(delta: float) -> void:
 				harvested = true
 				state = "no flower"
 				drop_flower()
-				
+				get_parent().get_parent().tile_status[location] = false
+
 func drop_flower():
 	await get_tree().create_timer(0.0).timeout
 	var flower_instance = flower.instantiate()
@@ -42,8 +44,6 @@ func drop_flower():
 	self.visible = false
 	await get_tree().create_timer(3).timeout
 	queue_free()
-	
-	
 
 func _on_harvest_body_entered(body):
 	if body.name == "Player":

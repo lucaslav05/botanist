@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bw6nk5rbhicun" path="res://player.tscn" id="2_2c62f"]
 [ext_resource type="Script" uid="uid://dpfaion562i6t" path="res://tile_map_layer.gd" id="2_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://00xnec7xf2h3" path="res://inventory/items/flower_collectable.tscn" id="5_8mm7a"]
+[ext_resource type="PackedScene" uid="uid://2rmxtc4brgyc" path="res://inventory/hotbar.tscn" id="6_hq1ik"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2c62f"]
 texture = ExtResource("1_0f027")
@@ -76,6 +77,22 @@ position = Vector2(84, 36)
 [node name="flower_collectable2" parent="." unique_id=1915472083 instance=ExtResource("5_8mm7a")]
 z_index = 1
 position = Vector2(145, 19)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1731056805]
+
+[node name="Hotbar" parent="CanvasLayer" unique_id=420732745 instance=ExtResource("6_hq1ik")]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -141.0
+offset_right = -94.0
+offset_bottom = -125.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(4.5, 4.5)
 
 [connection signal="body_entered" from="StairBox" to="Player" method="_on_stair_box_body_entered"]
 [connection signal="body_exited" from="StairBox" to="Player" method="_on_stair_box_body_exited"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://00xnec7xf2h3"]
+
+[ext_resource type="Script" uid="uid://xnjpiqb4ep81" path="res://flower_collectable.gd" id="1_7nkmv"]
+[ext_resource type="Texture2D" uid="uid://c75tvhd8v83us" path="res://crop/crop-growth-0002.png" id="2_54nya"]
+[ext_resource type="Resource" uid="uid://bb1jmoajivfuq" path="res://inventory/items/flower.tres" id="2_f6cwq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6cwq"]
+radius = 24.020824
+
+[node name="flower_collectable" type="StaticBody2D" unique_id=1753166202]
+script = ExtResource("1_7nkmv")
+item = ExtResource("2_f6cwq")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1428781147]
+texture_filter = 1
+texture = ExtResource("2_54nya")
+
+[node name="interactable_area" type="Area2D" parent="." unique_id=447597990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area" unique_id=1112590272]
+shape = SubResource("CircleShape2D_f6cwq")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

@@ -2,6 +2,10 @@ extends Node2D
 
 var state = "no flower"
 var player_in_area = false
+var player = null
+var harvested = false
+
+var flower = preload("res://inventory/items/flower_collectable.tscn")
 
 @export var seedTexture: Texture2D
 @export var flowerTexture: Texture2D
@@ -22,19 +26,30 @@ func _process(delta: float) -> void:
 		$Sprite2D.texture = seedTexture
 	if state == "flower":
 		$Sprite2D.texture = flowerTexture
-		if player_in_area:
+		if player_in_area and not harvested:
 			if Input.is_action_just_pressed("e"):
 				print("SHOULD HARVEST")
+				harvested = true
 				state = "no flower"
 				drop_flower()
 				
 func drop_flower():
-	pass
+	await get_tree().create_timer(0.0).timeout
+	var flower_instance = flower.instantiate()
+	flower_instance.rotation = rotation
+	flower_instance.global_position = $Marker2D.global_position
+	get_parent().add_child(flower_instance)
+	self.visible = false
+	await get_tree().create_timer(3).timeout
+	queue_free()
+	
+	
 
 func _on_harvest_body_entered(body):
 	if body.name == "Player":
 		print("Player entered")
 		player_in_area = true
+		player = body
 
 func _on_harvest_body_exited(body):
 	if body.name == "Player":

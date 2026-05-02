@@ -2,7 +2,8 @@ extends Node2D
 
 const Crop = preload("res://crop/crop.tscn")
 
-@onready var tile_map = $WorldTileMap.get_used_cells_by_id(0, Vector2i(2, 0))
+@onready var plot_tiles = $WorldTileMap.get_used_cells_by_id(0, Vector2i(2, 0))
+@onready var portal_tiles = $WorldTileMap.get_used_cells_by_id(0, Vector2i(1, 0))
 
 # stores Vector2i : bool (false if vacant, true if plant is there)
 @export var tile_status = {}
@@ -10,7 +11,7 @@ const Crop = preload("res://crop/crop.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	
-	for tile in tile_map:
+	for tile in plot_tiles:
 		tile_status[tile] = false
 
 	print(tile_status)
@@ -35,8 +36,11 @@ func plant_seed(v2i: Vector2i):
 	c.location = v2i
 	$Plants.add_child(c)
 
+func spawn_portal_random():
+	pass
+
 # DEBUG FUNCTION
 func fill_all_plots():
-	for tile in tile_map:
+	for tile in plot_tiles:
 		plant_seed(tile)
 		

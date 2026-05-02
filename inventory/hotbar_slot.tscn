@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://d2bs8hpe3tvob"]
+
+[ext_resource type="Script" uid="uid://b7mcirg1nk5u0" path="res://inventory/hotbar_slot.gd" id="1_37pqn"]
+[ext_resource type="Texture2D" uid="uid://bab0qkiwfiwyq" path="res://inventory/inventory-slot.png" id="2_6gi07"]
+[ext_resource type="PackedScene" uid="uid://dp5hnd1inack2" path="res://inventory/item_stack_gui.tscn" id="3_6gi07"]
+
+[node name="inv_UI_slot" type="Button" unique_id=1217722321]
+custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
+script = ExtResource("1_37pqn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1165584575]
+texture_filter = 1
+texture = ExtResource("2_6gi07")
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1115216554]
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Panel" parent="CenterContainer" unique_id=2069570561 instance=ExtResource("3_6gi07")]
+layout_mode = 2

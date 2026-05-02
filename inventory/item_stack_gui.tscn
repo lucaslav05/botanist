@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dp5hnd1inack2"]
+
+[ext_resource type="Script" uid="uid://diu0x43no35f5" path="res://inventory/item_stack_gui.gd" id="1_br7uk"]
+
+[node name="Panel" type="Panel" unique_id=2069570561]
+script = ExtResource("1_br7uk")
+
+[node name="item_display" type="Sprite2D" parent="." unique_id=1881901983]
+texture_filter = 1
+scale = Vector2(0.4, 0.4)
+
+[node name="Label" type="Label" parent="." unique_id=1875276748]
+custom_minimum_size = Vector2(40, 23)
+layout_mode = 0
+offset_left = -9.0
+offset_top = -1.0000001
+offset_right = 31.0
+offset_bottom = 22.0
+scale = Vector2(0.4, 0.4)
+horizontal_alignment = 2

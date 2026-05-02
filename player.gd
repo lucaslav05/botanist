@@ -5,6 +5,8 @@ const SPEED = 70.0
 var on_stairs: bool = false
 
 @onready var tile_map_layer_ref: TileMapLayer = get_parent().get_node("WorldTileMap")
+func _ready() -> void:
+	inv.use_item.connect(use_item)
 
 func cartesian_to_isometric(cartesian: Vector2):
 	var iso: Vector2
@@ -47,3 +49,10 @@ func _on_stair_box_body_exited(body: Node2D) -> void:
 	if body == self:
 		print("exited stair")
 		on_stairs = !on_stairs
+		
+func plant_seed():
+	pass
+	
+func use_item(item: InvItem):
+	item.use(self)
+	

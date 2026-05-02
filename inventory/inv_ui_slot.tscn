@@ -3,8 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://bab0qkiwfiwyq" path="res://inventory/inventory-slot.png" id="1_7exmh"]
 [ext_resource type="Script" uid="uid://b2vdd8ae83ba6" path="res://inventory/inv_ui_slot.gd" id="1_fcwim"]
 
-[node name="inv_UI_slot" type="Panel" unique_id=1851914110]
+[node name="inv_UI_slot" type="Button" unique_id=1217722321]
 custom_minimum_size = Vector2(16, 16)
+offset_right = 16.0
+offset_bottom = 16.0
 script = ExtResource("1_fcwim")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1165584575]
@@ -17,20 +19,3 @@ custom_minimum_size = Vector2(16, 16)
 layout_mode = 0
 offset_right = 16.0
 offset_bottom = 16.0
-
-[node name="Panel" type="Panel" parent="CenterContainer" unique_id=328297852]
-layout_mode = 2
-
-[node name="item_display" type="Sprite2D" parent="CenterContainer/Panel" unique_id=531819185]
-texture_filter = 1
-scale = Vector2(0.4, 0.4)
-
-[node name="Label" type="Label" parent="CenterContainer/Panel" unique_id=795186236]
-custom_minimum_size = Vector2(40, 23)
-layout_mode = 0
-offset_left = -9.0
-offset_top = -1.0000001
-offset_right = 31.0
-offset_bottom = 22.0
-scale = Vector2(0.4, 0.4)
-horizontal_alignment = 2

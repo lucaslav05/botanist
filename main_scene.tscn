@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://dpfaion562i6t" path="res://tile_map_layer.gd" id="2_gyfs4"]
 [ext_resource type="PackedScene" uid="uid://00xnec7xf2h3" path="res://inventory/items/flower_collectable.tscn" id="5_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://2rmxtc4brgyc" path="res://inventory/hotbar.tscn" id="6_hq1ik"]
-[ext_resource type="PackedScene" uid="uid://yttddbibg3qc" path="res://portals/portal.tscn" id="7_nfk4m"]
+[ext_resource type="Script" uid="uid://htxcgtk2egur" path="res://portal_spawn_timer.gd" id="8_66tet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2c62f"]
 texture = ExtResource("1_0f027")
@@ -79,9 +79,9 @@ position = Vector2(84, 36)
 z_index = 1
 position = Vector2(145, 19)
 
-[node name="Portal" parent="." unique_id=1431873867 instance=ExtResource("7_nfk4m")]
-z_index = 3
-position = Vector2(206, -37)
+[node name="PortalSpawnTimer" type="Timer" parent="." unique_id=635769157]
+one_shot = true
+script = ExtResource("8_66tet")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1731056805]
 

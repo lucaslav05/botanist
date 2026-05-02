@@ -65,6 +65,7 @@ script = ExtResource("1_awxq2")
 
 [node name="animation" type="AnimatedSprite2D" parent="." unique_id=1085606774]
 texture_filter = 1
+position = Vector2(0, -30)
 sprite_frames = SubResource("SpriteFrames_12rmo")
 animation = &"evernight"
 frame_progress = 0.76148754
@@ -73,5 +74,5 @@ frame_progress = 0.76148754
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=360283434]
 z_index = 3
-position = Vector2(1, 0)
+position = Vector2(1, -30)
 shape = SubResource("CapsuleShape2D_awxq2")

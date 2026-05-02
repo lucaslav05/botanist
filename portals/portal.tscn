@@ -72,5 +72,6 @@ frame_progress = 0.76148754
 [node name="Area2D" type="Area2D" parent="." unique_id=473403423]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=360283434]
+z_index = 3
 position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_awxq2")

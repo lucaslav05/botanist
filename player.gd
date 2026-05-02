@@ -4,6 +4,7 @@ extends CharacterBody2D
 const SPEED = 70.0
 var on_stairs: bool = false
 
+@onready var tile_map_layer_ref: TileMapLayer = get_parent().get_node("WorldTileMap")
 
 func cartesian_to_isometric(cartesian: Vector2):
 	var iso: Vector2
@@ -25,7 +26,13 @@ func _physics_process(delta: float) -> void:
 		velocity = Vector2.ZERO
 	velocity = cartesian_to_isometric(velocity)
 	move_and_slide()
-	
+
+func _process(delta):
+	if Input.is_action_just_pressed("e"):
+		var tile_pos: Vector2i = tile_map_layer_ref.local_to_map(global_position)
+		if tile_pos in get_parent().tile_status:
+			get_parent().plant_seed(tile_pos)
+
 func collect(item):
 	inv.insert(item)
 

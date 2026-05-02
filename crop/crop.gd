@@ -31,7 +31,12 @@ func _process(delta: float) -> void:
 func drop_flower():
 	pass
 
+func _on_harvest_body_entered(body):
+	if body.name == "Player":
+		print("Player entered")
+		player_in_area = true
 
-func _on_harvest_body_entered(body: Node2D):
-	if body.name == "player":
-		print("entered")
+func _on_harvest_body_exited(body):
+	if body.name == "Player":
+		print("Player exited")
+		player_in_area = false

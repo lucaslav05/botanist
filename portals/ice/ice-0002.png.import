@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cspylhjml6xia"
-path="res://.godot/imported/ice_portal_set.png-125ee6e0603f37c7488453fddac5cb57.ctex"
+uid="uid://dxljlny2gmqtw"
+path="res://.godot/imported/ice-0002.png-f190dc1c256a3edeecd4796730b2d5be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://portals/ice_portal_set.png"
-dest_files=["res://.godot/imported/ice_portal_set.png-125ee6e0603f37c7488453fddac5cb57.ctex"]
+source_file="res://portals/ice/ice-0002.png"
+dest_files=["res://.godot/imported/ice-0002.png-f190dc1c256a3edeecd4796730b2d5be.ctex"]
 
 [params]
 

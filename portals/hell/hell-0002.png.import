@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://daj2bjkirqena"
-path="res://.godot/imported/hell_portal_set.png-7a18d2588212f8981fa458db322fff97.ctex"
+uid="uid://dwq2ylssku3fv"
+path="res://.godot/imported/hell-0002.png-534e9b051eb12b92b26f147fce87c223.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://portals/hell_portal_set.png"
-dest_files=["res://.godot/imported/hell_portal_set.png-7a18d2588212f8981fa458db322fff97.ctex"]
+source_file="res://portals/hell/hell-0002.png"
+dest_files=["res://.godot/imported/hell-0002.png-534e9b051eb12b92b26f147fce87c223.ctex"]
 
 [params]
 

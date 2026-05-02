@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o772hsrtomu0"
-path="res://.godot/imported/evernight_portal_set.png-0574bb83e63172c8187e8a1f43e0ddce.ctex"
+uid="uid://b2sjpofjra42g"
+path="res://.godot/imported/ice-0001.png-94f39f8876f95e38429894e262a53016.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://portals/evernight_portal_set.png"
-dest_files=["res://.godot/imported/evernight_portal_set.png-0574bb83e63172c8187e8a1f43e0ddce.ctex"]
+source_file="res://portals/ice/ice-0001.png"
+dest_files=["res://.godot/imported/ice-0001.png-94f39f8876f95e38429894e262a53016.ctex"]
 
 [params]
 

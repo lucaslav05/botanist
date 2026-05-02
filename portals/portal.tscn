@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://yttddbibg3qc"]
+
+[ext_resource type="Texture2D" uid="uid://cooqbbxoo3w6w" path="res://portals/evernight/evernight-0001.png" id="1_0q6we"]
+[ext_resource type="Texture2D" uid="uid://bishkadfy38e8" path="res://portals/evernight/evernight-0002.png" id="2_swugm"]
+[ext_resource type="Texture2D" uid="uid://jmmgcicporai" path="res://portals/evernight/evernight-0003.png" id="3_3pigr"]
+[ext_resource type="Texture2D" uid="uid://bn3pq7pn056i4" path="res://portals/hell/hell-0001.png" id="4_12rmo"]
+[ext_resource type="Texture2D" uid="uid://dwq2ylssku3fv" path="res://portals/hell/hell-0002.png" id="5_coaet"]
+[ext_resource type="Texture2D" uid="uid://b4w1bosg5mq40" path="res://portals/hell/hell-0003.png" id="6_2xykh"]
+[ext_resource type="Texture2D" uid="uid://b2sjpofjra42g" path="res://portals/ice/ice-0001.png" id="7_fcbhl"]
+[ext_resource type="Texture2D" uid="uid://dxljlny2gmqtw" path="res://portals/ice/ice-0002.png" id="8_awxq2"]
+[ext_resource type="Texture2D" uid="uid://bim7xwr7b67rs" path="res://portals/ice/ice-0003.png" id="9_xwvxu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_12rmo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0q6we")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_swugm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3pigr")
+}],
+"loop": true,
+"name": &"evernight",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_12rmo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_coaet")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2xykh")
+}],
+"loop": true,
+"name": &"hell",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_fcbhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_awxq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_xwvxu")
+}],
+"loop": true,
+"name": &"ice",
+"speed": 7.0
+}]
+
+[node name="Portal" type="Node2D" unique_id=1431873867]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1085606774]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_12rmo")
+animation = &"evernight"
+frame_progress = 0.69225407

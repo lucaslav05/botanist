@@ -10,7 +10,7 @@ func cartesian_to_isometric(cartesian: Vector2):
 	if  on_stairs:
 		if  cartesian.x != 0:
 			iso = Vector2(cartesian.x - cartesian.y, (cartesian.x + cartesian.y)/2)
-		else:	
+		else:
 			iso = Vector2(cartesian.x - cartesian.y, (cartesian.x + cartesian.y)*1.25)
 	else:
 		iso = Vector2(cartesian.x - cartesian.y, (cartesian.x + cartesian.y)/2)

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://byc46ulcfiu05" path="res://main_scene.gd" id="1_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://bw6nk5rbhicun" path="res://player.tscn" id="2_2c62f"]
 [ext_resource type="Script" uid="uid://dpfaion562i6t" path="res://tile_map_layer.gd" id="2_gyfs4"]
+[ext_resource type="PackedScene" uid="uid://00xnec7xf2h3" path="res://inventory/items/flower_collectable.tscn" id="5_8mm7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2c62f"]
 texture = ExtResource("1_0f027")
@@ -67,6 +68,14 @@ position = Vector2(40, -36)
 position = Vector2(0.9999995, 2)
 rotation = -1.1641346
 shape = SubResource("CapsuleShape2D_d5x1h")
+
+[node name="flower_collectable" parent="." unique_id=1753166202 instance=ExtResource("5_8mm7a")]
+z_index = 1
+position = Vector2(84, 36)
+
+[node name="flower_collectable2" parent="." unique_id=1915472083 instance=ExtResource("5_8mm7a")]
+z_index = 1
+position = Vector2(145, 19)
 
 [connection signal="body_entered" from="StairBox" to="Player" method="_on_stair_box_body_entered"]
 [connection signal="body_exited" from="StairBox" to="Player" method="_on_stair_box_body_exited"]

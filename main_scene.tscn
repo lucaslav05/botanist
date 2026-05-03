@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://2rmxtc4brgyc" path="res://inventory/hotbar.tscn" id="6_hq1ik"]
 [ext_resource type="Script" uid="uid://dc4qogr3jxejh" path="res://score.gd" id="8_7ycvg"]
 [ext_resource type="PackedScene" uid="uid://kmxux4b1mchx" path="res://chest.tscn" id="8_66tet"]
+[ext_resource type="PackedScene" uid="uid://cm6mct41cyn65" path="res://fade_transition.tscn" id="9_wr18j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2c62f"]
 texture = ExtResource("1_0f027")
@@ -119,6 +120,9 @@ text = "0"
 label_settings = SubResource("LabelSettings_7ycvg")
 horizontal_alignment = 2
 script = ExtResource("8_7ycvg")
+
+[node name="Fade_transition" parent="CanvasLayer" unique_id=1505632146 instance=ExtResource("9_wr18j")]
+z_index = 4
 
 [node name="Chest" parent="." unique_id=1775603392 instance=ExtResource("8_66tet")]
 z_index = 2

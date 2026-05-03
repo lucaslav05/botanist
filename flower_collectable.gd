@@ -1,1 +1,1 @@
-class_name SeedCollectable extends Collectable
+class_name FlowerCollectable extends Collectable

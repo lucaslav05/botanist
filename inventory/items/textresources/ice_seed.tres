@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SeedItem" format=3 uid="uid://cslf5v6abi0bj"]
+
+[ext_resource type="Script" uid="uid://bxhdlu0hss3ro" path="res://seed_item.gd" id="1_a3lg4"]
+[ext_resource type="Texture2D" uid="uid://dnftpar1r76ma" path="res://inventory/items/ice_seed.png" id="2_qvqay"]
+
+[resource]
+script = ExtResource("1_a3lg4")
+name = "Ice Seed"
+texture = ExtResource("2_qvqay")
+maxAmountPrStack = 10
+metadata/_custom_type_script = "uid://ccjn7l6q87edt"

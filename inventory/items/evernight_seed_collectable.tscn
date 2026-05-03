@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bns4i2ncsoobv"]
+
+[ext_resource type="Script" uid="uid://ctm12h6jb5u45" path="res://seed_collectable.gd" id="1_p37um"]
+[ext_resource type="Resource" uid="uid://ddal3wvktsxw7" path="res://inventory/items/textresources/evernight_seed.tres" id="2_beepc"]
+[ext_resource type="Texture2D" uid="uid://b7jh5rj50yw41" path="res://inventory/items/evernight_seed.png" id="3_p37um"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6cwq"]
+radius = 24.020824
+
+[node name="seed_collectable" type="StaticBody2D" unique_id=1753166202]
+script = ExtResource("1_p37um")
+item = ExtResource("2_beepc")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1428781147]
+texture_filter = 1
+texture = ExtResource("3_p37um")
+
+[node name="interactable_area" type="Area2D" parent="." unique_id=447597990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area" unique_id=1112590272]
+shape = SubResource("CircleShape2D_f6cwq")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

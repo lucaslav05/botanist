@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SeedItem" format=3 uid="uid://cev0wt0d6ngow"]
+
+[ext_resource type="Script" uid="uid://bxhdlu0hss3ro" path="res://seed_item.gd" id="1_fs6lr"]
+[ext_resource type="Texture2D" uid="uid://tkdes4qvkrex" path="res://inventory/items/hell_seed.png" id="2_k3fk5"]
+
+[resource]
+script = ExtResource("1_fs6lr")
+name = "Hell Seed"
+texture = ExtResource("2_k3fk5")
+maxAmountPrStack = 10
+metadata/_custom_type_script = "uid://ccjn7l6q87edt"

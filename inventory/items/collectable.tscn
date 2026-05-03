@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://1e787w217op0"]
+
+[ext_resource type="Script" uid="uid://bgpkui02453vb" path="res://inventory/items/collectable.gd" id="1_87epe"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sojio"]
+radius = 24.020824
+
+[node name="collectable" type="StaticBody2D" unique_id=341570550]
+script = ExtResource("1_87epe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1323279692]
+texture_filter = 1
+
+[node name="interactable_area" type="Area2D" parent="." unique_id=1190604351]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area" unique_id=43449393]
+shape = SubResource("CircleShape2D_sojio")

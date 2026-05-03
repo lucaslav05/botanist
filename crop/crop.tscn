@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dwqt8irg8o6vv"]
 
 [ext_resource type="Script" uid="uid://bvaht3yalf4gn" path="res://crop/crop.gd" id="1_doysg"]
-[ext_resource type="Resource" uid="uid://bb1jmoajivfuq" path="res://inventory/items/flower.tres" id="2_lgay1"]
+[ext_resource type="PackedScene" uid="uid://00xnec7xf2h3" path="res://inventory/items/flower_collectable.tscn" id="2_lgay1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_reckc"]
 radius = 7.0
@@ -11,7 +11,7 @@ z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_doysg")
-item = ExtResource("2_lgay1")
+flower = ExtResource("2_lgay1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=706984071]
 position = Vector2(-16, -32)

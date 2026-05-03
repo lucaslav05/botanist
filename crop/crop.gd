@@ -6,11 +6,9 @@ var player = null
 var harvested = false
 var location : Vector2i
 
-var flower = preload("res://inventory/items/flower_collectable.tscn")
-
 @export var seedTexture: Texture2D
 @export var flowerTexture: Texture2D
-@export var item: InvItem
+@export var flower: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

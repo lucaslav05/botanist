@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://hluhcai2w7ss"]
+
+[ext_resource type="Script" uid="uid://bvaht3yalf4gn" path="res://crop/crop.gd" id="1_ej7f4"]
+[ext_resource type="Texture2D" uid="uid://bsa7ub6ovouul" path="res://crop/ice-0001.png" id="2_ej7f4"]
+[ext_resource type="Texture2D" uid="uid://d4gmvtw4obbp0" path="res://crop/ice-0002.png" id="3_h7mgx"]
+[ext_resource type="PackedScene" uid="uid://bytktejlx33a8" path="res://inventory/items/ice_flower_collectable.tscn" id="4_0wala"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_reckc"]
+radius = 7.0
+
+[node name="Crop" type="Node2D" unique_id=43826360]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_ej7f4")
+seedTexture = ExtResource("2_ej7f4")
+flowerTexture = ExtResource("3_h7mgx")
+flower = ExtResource("4_0wala")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=706984071]
+position = Vector2(-16, -32)
+centered = false
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1629963534]
+
+[node name="growth_timer" type="Timer" parent="." unique_id=1244193819]
+wait_time = 2.0
+one_shot = true
+
+[node name="harvest_area" type="Area2D" parent="." unique_id=749191236]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="harvest_area" unique_id=805847067]
+shape = SubResource("CircleShape2D_reckc")
+
+[connection signal="body_entered" from="harvest_area" to="." method="_on_harvest_body_entered"]
+[connection signal="body_exited" from="harvest_area" to="." method="_on_harvest_body_exited"]

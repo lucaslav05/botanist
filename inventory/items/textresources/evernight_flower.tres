@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FlowerItem" format=3 uid="uid://bhv68dtoeq60s"]
+
+[ext_resource type="Script" uid="uid://cd3vifkt6po4t" path="res://flower_item.gd" id="1_is1pu"]
+[ext_resource type="Texture2D" uid="uid://vowwl6oy2fpf" path="res://inventory/evernight-item.png" id="2_is1pu"]
+
+[resource]
+script = ExtResource("1_is1pu")
+name = "Evernight Flower"
+texture = ExtResource("2_is1pu")
+metadata/_custom_type_script = "uid://ccjn7l6q87edt"

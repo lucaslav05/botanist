@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bytktejlx33a8"]
+
+[ext_resource type="Script" uid="uid://xnjpiqb4ep81" path="res://flower_collectable.gd" id="1_g64p8"]
+[ext_resource type="Resource" uid="uid://cama7dt3d3lkf" path="res://inventory/items/textresources/ice_flower.tres" id="2_g64p8"]
+[ext_resource type="Texture2D" uid="uid://d4gmvtw4obbp0" path="res://crop/ice-0002.png" id="3_illjr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6cwq"]
+radius = 24.020824
+
+[node name="flower_collectable" type="StaticBody2D" unique_id=1753166202]
+script = ExtResource("1_g64p8")
+item = ExtResource("2_g64p8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1428781147]
+texture_filter = 1
+texture = ExtResource("3_illjr")
+
+[node name="interactable_area" type="Area2D" parent="." unique_id=447597990]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area" unique_id=1112590272]
+shape = SubResource("CircleShape2D_f6cwq")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

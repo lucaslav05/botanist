@@ -1,6 +1,6 @@
 extends Node2D
 
-const Crop = preload("res://crop/crop.tscn")
+#const Crop = preload("res://crop/evernight_crop.tscn")
 const Portal = preload("res://portals/portal.tscn")
 
 @onready var plot_tiles = $WorldTileMap.get_used_cells_by_id(0, Vector2i(2, 0))
@@ -25,13 +25,8 @@ func _ready():
 func _process(_delta):
 	pass
 
-func plant_seed(v2i: Vector2i):
+func plant_seed(v2i: Vector2i, c: Crop):
 	
-	# Create and Load textures
-	var c = Crop.instantiate()
-	c.seedTexture = load("res://crop/crop-growth-0001.png")
-	c.flowerTexture = load("res://crop/crop-growth-0002.png")
-
 	# Positioning
 	c.position = $WorldTileMap.map_to_local(v2i)
 	
@@ -66,9 +61,3 @@ func spawn_portal_random():
 		print("z index", p.z_index)
 		print("y sort", p.y_sort_enabled)
 		$Portals.add_child(p)
-
-# DEBUG FUNCTION
-func fill_all_plots():
-	for tile in plot_tiles:
-		plant_seed(tile)
-		

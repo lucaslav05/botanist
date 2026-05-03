@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dvo1ttpfek0ce"]
+
+[ext_resource type="Script" uid="uid://bvaht3yalf4gn" path="res://crop/crop.gd" id="1_aqden"]
+[ext_resource type="Texture2D" uid="uid://dq3k8a8wsbfc1" path="res://crop/hell-0001.png" id="2_aqden"]
+[ext_resource type="Texture2D" uid="uid://d4cwmqjdxw5p1" path="res://crop/hell-0002.png" id="3_644xs"]
+[ext_resource type="PackedScene" uid="uid://8gk872vsedky" path="res://inventory/items/hell_flower_collectable.tscn" id="4_aqden"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_reckc"]
+radius = 7.0
+
+[node name="Crop" type="Node2D" unique_id=43826360]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_aqden")
+seedTexture = ExtResource("2_aqden")
+flowerTexture = ExtResource("3_644xs")
+flower = ExtResource("4_aqden")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=706984071]
+position = Vector2(-16, -32)
+centered = false
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1629963534]
+
+[node name="growth_timer" type="Timer" parent="." unique_id=1244193819]
+wait_time = 2.0
+one_shot = true
+
+[node name="harvest_area" type="Area2D" parent="." unique_id=749191236]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="harvest_area" unique_id=805847067]
+shape = SubResource("CircleShape2D_reckc")
+
+[connection signal="body_entered" from="harvest_area" to="." method="_on_harvest_body_entered"]
+[connection signal="body_exited" from="harvest_area" to="." method="_on_harvest_body_exited"]

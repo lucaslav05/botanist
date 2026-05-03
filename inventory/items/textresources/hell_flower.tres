@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FlowerItem" format=3 uid="uid://bb1jmoajivfuq"]
+
+[ext_resource type="Script" uid="uid://cd3vifkt6po4t" path="res://flower_item.gd" id="1_n4d7w"]
+[ext_resource type="Texture2D" uid="uid://dgy378psrqfsn" path="res://inventory/hell-item.png" id="2_w4atq"]
+
+[resource]
+script = ExtResource("1_n4d7w")
+name = "Hell Flower"
+texture = ExtResource("2_w4atq")
+metadata/_custom_type_script = "uid://ccjn7l6q87edt"

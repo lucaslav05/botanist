@@ -165,13 +165,13 @@ func _on_stair_box_body_exited(body: Node2D) -> void:
 		print("exited stair")
 		on_stairs = !on_stairs
 		
-func plant_seed():
+func plant_seed(crop: Crop):
 	var tile_pos: Vector2i = tile_map_layer_ref.local_to_map(global_position)
 	if tile_pos in get_parent().tile_status:
 		if get_parent().tile_status[tile_pos] == false:
-			get_parent().plant_seed(tile_pos)
+			get_parent().plant_seed(tile_pos, crop)
 			get_parent().tile_status[tile_pos] = true
-	
+
 func use_item(item: InvItem):
 	item.use(self)
 	

@@ -1,10 +1,12 @@
 [gd_resource type="Resource" script_class="SeedItem" format=3 uid="uid://ddal3wvktsxw7"]
 
 [ext_resource type="Script" uid="uid://bxhdlu0hss3ro" path="res://seed_item.gd" id="1_65x8g"]
+[ext_resource type="PackedScene" uid="uid://dwqt8irg8o6vv" path="res://crop/evernight_crop.tscn" id="1_ulo4l"]
 [ext_resource type="Texture2D" uid="uid://b7jh5rj50yw41" path="res://inventory/items/evernight_seed.png" id="2_ulo4l"]
 
 [resource]
 script = ExtResource("1_65x8g")
+crop = ExtResource("1_ulo4l")
 name = "Evernight Seed"
 texture = ExtResource("2_ulo4l")
 maxAmountPrStack = 10

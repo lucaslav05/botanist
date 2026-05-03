@@ -1,5 +1,7 @@
 extends Node2D
 
+class_name Crop
+
 var state = "no flower"
 var player_in_area = false
 var player = null

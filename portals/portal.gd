@@ -2,7 +2,10 @@ extends Node2D
 
 @export var local_pos: Vector2i
 @export var existence_time_range = [5, 10]
-@export var seed: PackedScene
+
+const evernight_seed = preload("res://inventory/items/evernight_seed_collectable.tscn")
+const hell_seed = preload("res://inventory/items/hell_seed_collectable.tscn")
+const ice_seed = preload("res://inventory/items/ice_seed_collectable.tscn")
 
 @onready var existence_timer_ref: Timer = get_child(2)
 @onready var parent_ref: Node2D = get_parent().get_parent()
@@ -22,16 +25,27 @@ func _process(delta):
 	if existence_timer_ref.time_left == 0:
 		parent_ref.portal_tile_status[local_pos] = false
 		dismiss_portal()
-	
+		
+	if player_in_area:
+		print("portal type: ", $animation.animation)
 	if player_in_area and Input.is_action_just_pressed("e"):
 		print("portal: dropping seeds")
+		
 		drop_seeds()
 		dismiss_portal()
 		
 
 func drop_seeds():
 	await get_tree().create_timer(0.0).timeout
-	var seed_instance = seed.instantiate()
+	
+	var seed_instance
+	if $animation.animation == "hell":
+		seed_instance = hell_seed.instantiate()
+	if $animation.animation == "ice":
+		seed_instance = ice_seed.instantiate()
+	if $animation.animation == "evernight":
+		seed_instance = evernight_seed.instantiate()
+		
 	seed_instance.rotation = rotation
 	seed_instance.global_position = $Marker2D.global_position
 	get_parent().add_child(seed_instance)

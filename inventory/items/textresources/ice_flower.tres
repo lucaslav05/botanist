@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FlowerItem" format=3 uid="uid://cama7dt3d3lkf"]
+
+[ext_resource type="Script" uid="uid://cd3vifkt6po4t" path="res://flower_item.gd" id="1_pvesb"]
+[ext_resource type="Texture2D" uid="uid://b3fn7r0c7piu5" path="res://inventory/ice-item.png" id="2_pvesb"]
+
+[resource]
+script = ExtResource("1_pvesb")
+name = "Ice Flower"
+texture = ExtResource("2_pvesb")
+maxAmountPrStack = 10
+metadata/_custom_type_script = "uid://ccjn7l6q87edt"

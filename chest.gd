@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var chest_close: Texture2D = preload("res://animations/chest.png")
 @onready var chest_open: Texture2D = preload("res://animations/chest_open.png")
+@onready var sfx_coin: AudioStreamPlayer = $sfx_coin
 
 @onready var inventory: Inv = preload("res://inventory/playerinv.tres")
 
@@ -31,6 +32,8 @@ func remove_flowers():
 			inventory.removeSlot(slot)
 			flowerSum += (slot.amount * flow.pointValue)
 	Global.score += flowerSum
+	if flowerSum > 0:
+		sfx_coin.play()
 		
 
 

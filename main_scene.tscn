@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://dc4qogr3jxejh" path="res://score.gd" id="8_7ycvg"]
 [ext_resource type="PackedScene" uid="uid://kmxux4b1mchx" path="res://chest.tscn" id="8_66tet"]
 [ext_resource type="PackedScene" uid="uid://cm6mct41cyn65" path="res://fade_transition.tscn" id="9_wr18j"]
+[ext_resource type="AudioStream" uid="uid://d2l6jmh738y64" path="res://Game test.wav" id="11_qwutr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2c62f"]
 texture = ExtResource("1_0f027")
@@ -122,11 +123,16 @@ horizontal_alignment = 2
 script = ExtResource("8_7ycvg")
 
 [node name="Fade_transition" parent="CanvasLayer" unique_id=1505632146 instance=ExtResource("9_wr18j")]
+visible = false
 z_index = 4
+mouse_filter = 2
 
 [node name="Chest" parent="." unique_id=1775603392 instance=ExtResource("8_66tet")]
 z_index = 2
 position = Vector2(127, -90)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1110109968]
+stream = ExtResource("11_qwutr")
 
 [connection signal="body_entered" from="StairBox" to="Player" method="_on_stair_box_body_entered"]
 [connection signal="body_exited" from="StairBox" to="Player" method="_on_stair_box_body_exited"]

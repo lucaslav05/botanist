@@ -40,6 +40,7 @@ func use_item_at_index(index: int):
 	index_of_last_used_item = index
 	use_item.emit(slot.item)
 	
+	
 func remove_last_used_item():
 	if index_of_last_used_item < 0: return
 	var slot = slots[index_of_last_used_item]

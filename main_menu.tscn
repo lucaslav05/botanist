@@ -65,6 +65,7 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = 1150.0
 offset_bottom = 646.0
+mouse_filter = 2
 
 [node name="Fade_timer" type="Timer" parent="Fade_transition" unique_id=667486702]
 wait_time = 0.5

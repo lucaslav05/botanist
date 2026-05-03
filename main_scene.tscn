@@ -135,6 +135,31 @@ offset_right = 229.0
 offset_bottom = 195.0
 script = ExtResource("10_qwutr")
 
+[node name="instructionBoard" type="Panel" parent="CanvasLayer" unique_id=1771120967]
+offset_left = 858.0
+offset_top = 160.0
+offset_right = 1132.0
+offset_bottom = 332.0
+
+[node name="Instructions" type="Label" parent="CanvasLayer/instructionBoard" unique_id=28633295]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 20.0
+offset_right = 261.0
+offset_bottom = 147.0
+text = "WASD - movement
+E - interact
+ I - inventory
+TAB - cycle inventory
+Click to move items in inventory"
+
+[node name="toggleInstructions" type="Label" parent="CanvasLayer" unique_id=2111781599]
+offset_left = 937.0
+offset_top = 161.0
+offset_right = 1131.0
+offset_bottom = 184.0
+text = "Press 'Y' to open controls"
+
 [node name="Chest" parent="." unique_id=1775603392 instance=ExtResource("8_66tet")]
 z_index = 2
 position = Vector2(127, -90)

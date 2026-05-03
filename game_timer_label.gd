@@ -11,7 +11,6 @@ func _ready():
 func _process(delta):
 	#var time_remaining: int = get_parent().get_parent().get_child(10).time_left
 	var time_remaining: int = $"../../GameTimer".time_left
-	print(time_remaining)
 	
 	var min = time_remaining/60
 	var sec = time_remaining%60

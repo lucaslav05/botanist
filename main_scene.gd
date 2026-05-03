@@ -13,11 +13,17 @@ const Portal = preload("res://portals/portal.tscn")
 @export var portal_tile_status = {}
 
 var gameover: bool = false
+var instructions_on_screen = false
+
 const SAVEFILE = "user://savefile.save"
 var highest_record = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	gameover = false
+	$CanvasLayer/toggleInstructions.show
+	$CanvasLayer/instructionBoard.hide()
+	
 	$AudioStreamPlayer.stop()
 	$AudioStreamPlayer.stream = load("res://maintheme.ogg")
 	$AudioStreamPlayer.play()
@@ -31,6 +37,20 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	if Input.is_action_just_pressed("toggle_instructions"):
+		print("Y pressed")
+	if Input.is_action_just_pressed("toggle_instructions") && instructions_on_screen == false:
+		print("a")
+		$CanvasLayer/instructionBoard.visible = true
+		$CanvasLayer/toggleInstructions.visible = false
+		instructions_on_screen = true
+	
+	elif Input.is_action_just_pressed("toggle_instructions") && instructions_on_screen == true:
+		print("b")
+		$CanvasLayer/instructionBoard.visible = false
+		$CanvasLayer/toggleInstructions.visible = true
+		instructions_on_screen = false
+		
 	if $GameTimer.time_left == 0 && gameover == false:
 		gameover = true
 		var file = FileAccess.open(SAVEFILE, FileAccess.WRITE_READ)

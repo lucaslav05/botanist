@@ -8,3 +8,6 @@ class_name InvItem
 
 func use(_player: CharacterBody2D): 
 	pass
+
+func can_be_used(player: CharacterBody2D) -> bool:
+	return false

@@ -167,11 +167,19 @@ func _on_stair_box_body_exited(body: Node2D) -> void:
 		
 func plant_seed(crop: Crop):
 	var tile_pos: Vector2i = tile_map_layer_ref.local_to_map(global_position)
+	get_parent().plant_seed(tile_pos, crop)
+	get_parent().tile_status[tile_pos] = true
+
+func can_plant() -> bool:
+	var tile_pos: Vector2i = tile_map_layer_ref.local_to_map(global_position)
 	if tile_pos in get_parent().tile_status:
 		if get_parent().tile_status[tile_pos] == false:
-			get_parent().plant_seed(tile_pos, crop)
-			get_parent().tile_status[tile_pos] = true
+			return true
+	return false
+
 
 func use_item(item: InvItem):
+	if !item.can_be_used(self): return
 	item.use(self)
+	inv.remove_last_used_item()
 	

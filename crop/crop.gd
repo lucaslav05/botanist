@@ -33,7 +33,7 @@ func _process(_delta: float) -> void:
 				harvested = true
 				state = "no flower"
 				drop_flower()
-				get_parent().get_parent().tile_status[location] = false
+				get_parent().get_parent().tile_status[location] = false	
 
 func drop_flower():
 	await get_tree().create_timer(0.0).timeout

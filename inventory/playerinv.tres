@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="Inv" format=3 uid="uid://bkpvg4adb1xhq"]
 
-[ext_resource type="Resource" uid="uid://ba6if4jmahput" path="res://inventory/items/seedPack.tres" id="2_f70d8"]
+[ext_resource type="Resource" uid="uid://ba6if4jmahput" path="res://inventory/items/textresources/seedPack.tres" id="2_f70d8"]
 [ext_resource type="Script" uid="uid://bx8wq5vuo1pe6" path="res://inv_slot.gd" id="2_g8gqn"]
 [ext_resource type="Script" uid="uid://d161240ijwblb" path="res://inventory/inventory.gd" id="3_11wfs"]
 

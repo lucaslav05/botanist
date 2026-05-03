@@ -42,7 +42,7 @@ func update_slots():
 		itemStackGui.inventorySlot = inventorySlot
 		itemStackGui.update()
 			
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed("i"):
 		if is_open:
 			close()
@@ -147,7 +147,7 @@ func putItemBack():
 	insertItemInSlot(targetSlot)
 	locked = false
 	
-func _input(event):
+func _input(_event):
 	if itemInHand and !locked and Input.is_action_just_pressed("rightClick"):
 		putItemBack()
 	updateItemInHand()

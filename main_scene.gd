@@ -22,7 +22,7 @@ func _ready():
 		portal_tile_status[tile] = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 func plant_seed(v2i: Vector2i):

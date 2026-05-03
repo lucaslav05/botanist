@@ -6,5 +6,5 @@ class_name InvItem
 @export var texture: Texture2D
 @export var maxAmountPrStack: int
 
-func use(player: CharacterBody2D): 
+func use(_player: CharacterBody2D): 
 	pass

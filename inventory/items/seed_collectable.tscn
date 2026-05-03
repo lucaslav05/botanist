@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bns4i2ncsoobv"]
 
 [ext_resource type="Script" uid="uid://xnjpiqb4ep81" path="res://flower_collectable.gd" id="1_7nkmv"]
-[ext_resource type="Resource" uid="uid://cev0wt0d6ngow" path="res://inventory/items/hell_seed_collectable.tres" id="2_qur5v"]
+[ext_resource type="Resource" uid="uid://cev0wt0d6ngow" path="res://inventory/items/textresources/hell_seed_collectable.tres" id="2_qur5v"]
 [ext_resource type="Texture2D" uid="uid://db3boo8v64gee" path="res://seedPack.png" id="3_qur5v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f6cwq"]

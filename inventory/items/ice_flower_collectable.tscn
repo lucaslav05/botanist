@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xnjpiqb4ep81" path="res://flower_collectable.gd" id="1_g64p8"]
 [ext_resource type="Resource" uid="uid://cama7dt3d3lkf" path="res://inventory/items/textresources/ice_flower.tres" id="2_g64p8"]
-[ext_resource type="Texture2D" uid="uid://d4gmvtw4obbp0" path="res://crop/ice-0002.png" id="3_illjr"]
+[ext_resource type="Texture2D" uid="uid://b3fn7r0c7piu5" path="res://inventory/ice-item.png" id="3_g64p8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f6cwq"]
 radius = 24.020824
@@ -13,7 +13,7 @@ item = ExtResource("2_g64p8")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1428781147]
 texture_filter = 1
-texture = ExtResource("3_illjr")
+texture = ExtResource("3_g64p8")
 
 [node name="interactable_area" type="Area2D" parent="." unique_id=447597990]
 

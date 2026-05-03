@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dq3k8a8wsbfc1" path="res://crop/hell-0001.png" id="2_aqden"]
 [ext_resource type="Texture2D" uid="uid://d4cwmqjdxw5p1" path="res://crop/hell-0002.png" id="3_644xs"]
 [ext_resource type="PackedScene" uid="uid://8gk872vsedky" path="res://inventory/items/hell_flower_collectable.tscn" id="4_aqden"]
+[ext_resource type="Texture2D" uid="uid://dgy378psrqfsn" path="res://inventory/hell-item.png" id="5_644xs"]
 
 [node name="Crop" type="Node2D" unique_id=43826360]
 z_index = 1
@@ -16,6 +17,7 @@ flower = ExtResource("4_aqden")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=706984071]
 position = Vector2(-16, -32)
+texture = ExtResource("5_644xs")
 centered = false
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1629963534]

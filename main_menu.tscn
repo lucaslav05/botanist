@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://ul4slbuw03i4"]
+
+[ext_resource type="Script" uid="uid://btfgh7aosytrg" path="res://main_menu.gd" id="1_06t4h"]
+[ext_resource type="Texture2D" uid="uid://by6wm7i7othel" path="res://Menu Buttons/startbutton.png" id="2_qe12f"]
+[ext_resource type="Texture2D" uid="uid://b5lweij2wxl0l" path="res://Menu Buttons/startbutton_clicked.png" id="3_8qtwp"]
+[ext_resource type="Texture2D" uid="uid://cgop7jikne3c" path="res://Menu Buttons/optionsbutton.png" id="4_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://rx82wcngsrx8" path="res://Menu Buttons/optionsbutton_clicked.png" id="5_0o4t1"]
+[ext_resource type="Texture2D" uid="uid://cdtbnghhgfcdk" path="res://Menu Buttons/quitbutton.png" id="6_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://dpm1jff6dhf6o" path="res://Menu Buttons/quitbutton_clicked.png" id="7_j5v2v"]
+[ext_resource type="Texture2D" uid="uid://c20h6awybfea4" path="res://Menu Buttons/Menu Background.png" id="8_8qtwp"]
+
+[node name="Main Menu" type="Node2D" unique_id=1505211688]
+script = ExtResource("1_06t4h")
+
+[node name="Button_manager" type="Control" parent="." unique_id=837990303]
+z_index = 1
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Start" type="TextureButton" parent="Button_manager" unique_id=722528426]
+texture_filter = 1
+layout_mode = 0
+offset_left = 413.0
+offset_top = 51.999992
+offset_right = 477.0
+offset_bottom = 115.99999
+scale = Vector2(5, 5)
+texture_normal = ExtResource("2_qe12f")
+texture_pressed = ExtResource("3_8qtwp")
+
+[node name="Options" type="TextureButton" parent="Button_manager" unique_id=810086664]
+texture_filter = 1
+layout_mode = 0
+offset_left = 414.0
+offset_top = 225.0
+offset_right = 478.0
+offset_bottom = 289.0
+scale = Vector2(5, 5)
+texture_normal = ExtResource("4_dy7ct")
+texture_pressed = ExtResource("5_0o4t1")
+
+[node name="Quit" type="TextureButton" parent="Button_manager" unique_id=1991032392]
+texture_filter = 1
+layout_mode = 0
+offset_left = 411.0
+offset_top = 396.00003
+offset_right = 475.0
+offset_bottom = 460.00003
+scale = Vector2(5, 5)
+texture_normal = ExtResource("6_0k4wn")
+texture_pressed = ExtResource("7_j5v2v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=714661139]
+texture_filter = 1
+position = Vector2(576, 336)
+scale = Vector2(8.976563, 7)
+texture = ExtResource("8_8qtwp")
+
+[connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]

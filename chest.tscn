@@ -8,7 +8,7 @@ script = ExtResource("1_8uwsg")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1900062104]
 texture_filter = 1
-position = Vector2(12, -16)
+position = Vector2(13, -14)
 texture = ExtResource("1_twpm2")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=1862570586]
@@ -16,7 +16,7 @@ texture = ExtResource("1_twpm2")
 [node name="depot_area" type="Area2D" parent="." unique_id=1972805176]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="depot_area" unique_id=194688765]
-polygon = PackedVector2Array(-10, -20, 44, 6, 18, 24, -38, -4)
+polygon = PackedVector2Array(-18, -24, 48, 8, 18, 24, -48, -9)
 
 [connection signal="body_entered" from="depot_area" to="." method="_on_depot_area_body_entered"]
 [connection signal="body_exited" from="depot_area" to="." method="_on_depot_area_body_exited"]

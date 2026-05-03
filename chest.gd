@@ -17,12 +17,25 @@ func _process(delta: float) -> void:
 				remove_flowers()
 				
 func remove_flowers():
-	pass
+	var flowerSum: int = 0
+	for slot in inventory.slots:
+		if !slot:
+			continue
+		if !slot.item:
+			continue
+		if slot.item is FlowerItem:
+			var flow: FlowerItem = slot.item
+			inventory.removeSlot(slot)
+			flowerSum += (slot.amount * flow.pointValue)
+	Global.score += flowerSum
+		
+
 
 func _on_depot_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		print("Player entered Chest")
 		player_in_area = true
+		$Sprite2D.texture = "res://animations/chest_open.png"
 		player = body
 
 
@@ -30,3 +43,4 @@ func _on_depot_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		print("Player exited Chest")
 		player_in_area = false
+		$Sprite2D.texture = "res://animations/chest.png"

@@ -15,6 +15,10 @@ run/main_scene="uid://dnvsekxt2stcq"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Global="*uid://c70usfa3ehvvf"
+
 [global_group]
 
 StairBox=""

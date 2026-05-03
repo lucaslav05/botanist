@@ -11,8 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://cm6mct41cyn65" path="res://fade_transition.tscn" id="9_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://bxs2wjtyupo3l" path="res://Menu Buttons/backbutton.png" id="10_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://ogj58ic0wjac" path="res://Menu Buttons/backbutton_clicked.png" id="11_j5v2v"]
-[ext_resource type="Script" uid="uid://b5hk7m6iiwnsu" path="res://audio_control.gd" id="12_j5v2v"]
-[ext_resource type="Script" uid="uid://ch46xofq6ux4u" path="res://fullscreen_control.gd" id="13_iotk1"]
+[ext_resource type="Script" path="res://audio_control.gd" id="12_j5v2v"]
+[ext_resource type="Script" path="res://fullscreen_control.gd" id="13_iotk1"]
+[ext_resource type="AudioStream" uid="uid://d2l6jmh738y64" path="res://Game test.wav" id="14_w44g7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy7ct"]
 font_size = 32
@@ -173,6 +174,9 @@ offset_right = 523.0
 offset_bottom = 309.0
 text = "Fullscreen"
 script = ExtResource("13_iotk1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=760201218]
+stream = ExtResource("14_w44g7")
 
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]

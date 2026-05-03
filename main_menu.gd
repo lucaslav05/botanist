@@ -6,10 +6,12 @@ extends Node2D
 var button_type = null
 
 func _ready() -> void:
+	$AudioStreamPlayer.play()
 	button_manager.visible = true
 	options.visible = false
 	
 func _on_start_pressed() -> void:
+	$AudioStreamPlayer.stop()
 	button_type = "start"
 	$Fade_transition.show()
 	$Fade_transition/Fade_timer.start()

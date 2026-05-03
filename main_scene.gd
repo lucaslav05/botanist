@@ -16,6 +16,8 @@ var gameover: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.stream = load("res://maintheme.ogg")
 	$AudioStreamPlayer.play()
 	$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_out")
 	

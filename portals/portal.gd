@@ -6,6 +6,8 @@ extends Node2D
 @onready var existence_timer_ref: Timer = get_child(2)
 @onready var parent_ref: Node2D = get_parent().get_parent()
 
+var player_in_area = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var existence_time = randi_range(existence_time_range[0], existence_time_range[1])

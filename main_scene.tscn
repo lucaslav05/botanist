@@ -145,6 +145,7 @@ autostart = true
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1110109968]
 stream = ExtResource("11_qwutr")
+bus = &"Music"
 
 [connection signal="body_entered" from="StairBox" to="Player" method="_on_stair_box_body_entered"]
 [connection signal="body_exited" from="StairBox" to="Player" method="_on_stair_box_body_exited"]

@@ -568,3 +568,4 @@ scale = Vector2(1.5, 1.5)
 [node name="sfx_plant" type="AudioStreamPlayer" parent="." unique_id=721305005]
 stream = ExtResource("6_2hs0m")
 volume_db = -7.0
+bus = &"SFX"

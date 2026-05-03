@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cooqbbxoo3w6w" path="res://portals/evernight/evernight-0001.png" id="1_0q6we"]
 [ext_resource type="Script" uid="uid://bh2i8ibgccjlb" path="res://portals/portal.gd" id="1_awxq2"]
 [ext_resource type="Texture2D" uid="uid://bishkadfy38e8" path="res://portals/evernight/evernight-0002.png" id="2_swugm"]
+[ext_resource type="PackedScene" uid="uid://bns4i2ncsoobv" path="res://inventory/items/seed_collectable.tscn" id="2_xwvxu"]
 [ext_resource type="Texture2D" uid="uid://jmmgcicporai" path="res://portals/evernight/evernight-0003.png" id="3_3pigr"]
 [ext_resource type="Texture2D" uid="uid://bn3pq7pn056i4" path="res://portals/hell/hell-0001.png" id="4_12rmo"]
 [ext_resource type="Texture2D" uid="uid://dwq2ylssku3fv" path="res://portals/hell/hell-0002.png" id="5_coaet"]
@@ -60,6 +61,7 @@ animations = [{
 z_index = 1
 y_sort_enabled = true
 script = ExtResource("1_awxq2")
+seed = ExtResource("2_xwvxu")
 
 [node name="animation" type="AnimatedSprite2D" parent="." unique_id=1085606774]
 texture_filter = 1
@@ -75,3 +77,9 @@ polygon = PackedVector2Array(0, -7.5, 15, 0, 0, 7.5, -15, 0)
 
 [node name="existence_timer" type="Timer" parent="." unique_id=1495076004]
 one_shot = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1336560298]
+position = Vector2(0, 7)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

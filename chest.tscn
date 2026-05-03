@@ -23,6 +23,7 @@ polygon = PackedVector2Array(-18, -24, 48, 8, 18, 24, -48, -9)
 stream = ExtResource("3_bp1or")
 volume_db = -9.0
 pitch_scale = 0.5
+bus = &"SFX"
 
 [connection signal="body_entered" from="depot_area" to="." method="_on_depot_area_body_entered"]
 [connection signal="body_exited" from="depot_area" to="." method="_on_depot_area_body_exited"]

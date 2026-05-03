@@ -9,6 +9,27 @@
 [ext_resource type="Texture2D" uid="uid://dpm1jff6dhf6o" path="res://Menu Buttons/quitbutton_clicked.png" id="7_j5v2v"]
 [ext_resource type="Texture2D" uid="uid://c20h6awybfea4" path="res://Menu Buttons/Menu Background.png" id="8_8qtwp"]
 [ext_resource type="PackedScene" uid="uid://cm6mct41cyn65" path="res://fade_transition.tscn" id="9_dy7ct"]
+[ext_resource type="Texture2D" uid="uid://bxs2wjtyupo3l" path="res://Menu Buttons/backbutton.png" id="10_0k4wn"]
+[ext_resource type="Texture2D" uid="uid://ogj58ic0wjac" path="res://Menu Buttons/backbutton_clicked.png" id="11_j5v2v"]
+[ext_resource type="Script" uid="uid://b5hk7m6iiwnsu" path="res://audio_control.gd" id="12_j5v2v"]
+[ext_resource type="Script" uid="uid://ch46xofq6ux4u" path="res://fullscreen_control.gd" id="13_iotk1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dy7ct"]
+font_size = 32
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0k4wn"]
+color = Color(0.9599507, 0.9599507, 0.9599507, 1)
+thickness = 6
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_j5v2v"]
+color = Color(1.0236528, 0.4073531, 0.75145376, 1)
+thickness = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_iotk1"]
+font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_w44g7"]
+font_size = 20
 
 [node name="Main Menu" type="Node2D" unique_id=1505211688]
 script = ExtResource("1_06t4h")
@@ -70,7 +91,94 @@ mouse_filter = 2
 [node name="Fade_timer" type="Timer" parent="Fade_transition" unique_id=667486702]
 wait_time = 0.5
 
+[node name="Options" type="Panel" parent="." unique_id=675909511]
+z_index = 1
+offset_left = 206.0
+offset_top = 120.0
+offset_right = 932.0
+offset_bottom = 650.0
+
+[node name="Label" type="Label" parent="Options" unique_id=748072703]
+layout_mode = 0
+offset_right = 728.0
+offset_bottom = 133.0
+text = "Options"
+label_settings = SubResource("LabelSettings_dy7ct")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="TextureButton" parent="Options/Label" unique_id=320600621]
+texture_filter = 1
+layout_mode = 0
+offset_left = 200.00002
+offset_top = 272.00003
+offset_right = 264.2
+offset_bottom = 336.00003
+scale = Vector2(5, 5)
+texture_normal = ExtResource("10_0k4wn")
+texture_pressed = ExtResource("11_j5v2v")
+
+[node name="AudioControl" type="HSlider" parent="Options" unique_id=369396946]
+layout_mode = 0
+offset_left = 204.0
+offset_top = 122.0
+offset_right = 525.0
+offset_bottom = 182.0
+theme_override_styles/slider = SubResource("StyleBoxLine_0k4wn")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_j5v2v")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_j5v2v")
+max_value = 1.0
+step = 0.05
+script = ExtResource("12_j5v2v")
+audio_bus_name = "Music"
+
+[node name="Label" type="Label" parent="Options/AudioControl" unique_id=546190794]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -9.0
+offset_right = 137.0
+offset_bottom = 19.0
+text = "Music Volume"
+label_settings = SubResource("LabelSettings_iotk1")
+
+[node name="AudioControl2" type="HSlider" parent="Options" unique_id=1012035281]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 222.0
+offset_right = 527.0
+offset_bottom = 282.0
+theme_override_styles/slider = SubResource("StyleBoxLine_0k4wn")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_j5v2v")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_j5v2v")
+max_value = 1.0
+step = 0.05
+script = ExtResource("12_j5v2v")
+audio_bus_name = "SFX"
+
+[node name="Label" type="Label" parent="Options/AudioControl2" unique_id=723721686]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -35.0
+offset_right = 328.0
+offset_bottom = 14.0
+text = "SFX Volume"
+label_settings = SubResource("LabelSettings_w44g7")
+vertical_alignment = 2
+
+[node name="FullscreenControl" type="CheckButton" parent="Options" unique_id=813601853]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 278.0
+offset_right = 523.0
+offset_bottom = 309.0
+text = "Fullscreen"
+script = ExtResource("13_iotk1")
+
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]
 [connection signal="pressed" from="Button_manager/Quit" to="." method="_on_quit_pressed"]
 [connection signal="timeout" from="Fade_transition/Fade_timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="Options/Label/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Options/AudioControl" to="Options/AudioControl" method="_on_value_changed"]
+[connection signal="value_changed" from="Options/AudioControl2" to="Options/AudioControl2" method="_on_value_changed"]
+[connection signal="toggled" from="Options/FullscreenControl" to="Options/FullscreenControl" method="_on_toggled"]

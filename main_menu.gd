@@ -4,12 +4,21 @@ extends Node2D
 @onready var options: Panel = $Options
 
 var button_type = null
+const SAVEFILE = "user://savefile.save"
+var highest_record = 0
 
 func _ready() -> void:
+	load_score()
+	$Highscore/ScoreCounter.text = str(highest_record)
 	$AudioStreamPlayer.play()
 	button_manager.visible = true
 	options.visible = false
 	
+func load_score():
+	var file = FileAccess.open(SAVEFILE, FileAccess.READ)
+	if FileAccess.file_exists(SAVEFILE):
+		highest_record = file.get_32()
+
 func _on_start_pressed() -> void:
 	$AudioStreamPlayer.stop()
 	button_type = "start"

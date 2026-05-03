@@ -13,6 +13,8 @@ const Portal = preload("res://portals/portal.tscn")
 @export var portal_tile_status = {}
 
 var gameover: bool = false
+const SAVEFILE = "user://savefile.save"
+var highest_record = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,6 +33,8 @@ func _ready():
 func _process(_delta):
 	if $GameTimer.time_left == 0 && gameover == false:
 		gameover = true
+		var file = FileAccess.open(SAVEFILE, FileAccess.WRITE_READ)
+		file.store_32(get_highest(Global.score))
 		$AudioStreamPlayer.stop()
 		$AudioStreamPlayer.stream = load("res://game_over.wav")
 		$AudioStreamPlayer.play()
@@ -40,6 +44,17 @@ func _process(_delta):
 		
 		
 		get_tree().change_scene_to_file("res://main_menu.tscn")
+
+func get_highest(score: int):
+	var file = FileAccess.open(SAVEFILE, FileAccess.READ)
+	if FileAccess.file_exists(SAVEFILE):
+		var record = file.get_32()
+		if score <= record:
+			highest_record = highest_record
+	else:
+		highest_record = score
+	
+
 
 func plant_seed(v2i: Vector2i, c: Crop):
 	

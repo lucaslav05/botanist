@@ -11,8 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://cm6mct41cyn65" path="res://fade_transition.tscn" id="9_dy7ct"]
 [ext_resource type="Texture2D" uid="uid://bxs2wjtyupo3l" path="res://Menu Buttons/backbutton.png" id="10_0k4wn"]
 [ext_resource type="Texture2D" uid="uid://ogj58ic0wjac" path="res://Menu Buttons/backbutton_clicked.png" id="11_j5v2v"]
-[ext_resource type="Script" path="res://audio_control.gd" id="12_j5v2v"]
-[ext_resource type="Script" path="res://fullscreen_control.gd" id="13_iotk1"]
+[ext_resource type="Script" uid="uid://b5hk7m6iiwnsu" path="res://audio_control.gd" id="12_j5v2v"]
+[ext_resource type="Script" uid="uid://ch46xofq6ux4u" path="res://fullscreen_control.gd" id="13_iotk1"]
 [ext_resource type="AudioStream" uid="uid://d2l6jmh738y64" path="res://Game test.wav" id="14_w44g7"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dy7ct"]
@@ -31,6 +31,12 @@ font_size = 20
 
 [sub_resource type="LabelSettings" id="LabelSettings_w44g7"]
 font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_cm266"]
+font_size = 30
+
+[sub_resource type="LabelSettings" id="LabelSettings_g8g3n"]
+font_size = 32
 
 [node name="Main Menu" type="Node2D" unique_id=1505211688]
 script = ExtResource("1_06t4h")
@@ -130,6 +136,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_j5v2v")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_j5v2v")
 max_value = 1.0
 step = 0.05
+value = 0.5
 script = ExtResource("12_j5v2v")
 audio_bus_name = "Music"
 
@@ -153,6 +160,7 @@ theme_override_styles/grabber_area = SubResource("StyleBoxLine_j5v2v")
 theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_j5v2v")
 max_value = 1.0
 step = 0.05
+value = 0.5
 script = ExtResource("12_j5v2v")
 audio_bus_name = "SFX"
 
@@ -177,6 +185,23 @@ script = ExtResource("13_iotk1")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=760201218]
 stream = ExtResource("14_w44g7")
+volume_db = -6.0
+bus = &"Music"
+
+[node name="Highscore" type="Label" parent="." unique_id=1056269271]
+offset_left = 851.0
+offset_right = 1050.0
+offset_bottom = 68.0
+text = "Highscore:"
+label_settings = SubResource("LabelSettings_cm266")
+
+[node name="ScoreCounter" type="Label" parent="Highscore" unique_id=1754505255]
+layout_mode = 0
+offset_left = 160.0
+offset_right = 220.0
+offset_bottom = 45.0
+text = "0"
+label_settings = SubResource("LabelSettings_g8g3n")
 
 [connection signal="pressed" from="Button_manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_manager/Options" to="." method="_on_options_pressed"]

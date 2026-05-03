@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dgtwxhouxsosb" path="res://chest.gd" id="1_8uwsg"]
 [ext_resource type="Texture2D" uid="uid://p31m3nsfggmu" path="res://animations/chest.png" id="1_twpm2"]
+[ext_resource type="AudioStream" uid="uid://b1su6b5napmtv" path="res://coin.wav" id="3_bp1or"]
 
 [node name="Chest" type="Node2D" unique_id=1775603392]
 script = ExtResource("1_8uwsg")
@@ -17,6 +18,11 @@ texture = ExtResource("1_twpm2")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="depot_area" unique_id=194688765]
 polygon = PackedVector2Array(-18, -24, 48, 8, 18, 24, -48, -9)
+
+[node name="sfx_coin" type="AudioStreamPlayer" parent="." unique_id=458816408]
+stream = ExtResource("3_bp1or")
+volume_db = -9.0
+pitch_scale = 0.5
 
 [connection signal="body_entered" from="depot_area" to="." method="_on_depot_area_body_entered"]
 [connection signal="body_exited" from="depot_area" to="." method="_on_depot_area_body_exited"]

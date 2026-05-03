@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var sfx_plant: AudioStreamPlayer = $sfx_plant
+
 @export var inv: Inv
 const SPEED = 70.0
 var on_stairs: bool = false
@@ -169,6 +171,7 @@ func plant_seed(crop: Crop):
 	var tile_pos: Vector2i = tile_map_layer_ref.local_to_map(global_position)
 	get_parent().plant_seed(tile_pos, crop)
 	get_parent().tile_status[tile_pos] = true
+	sfx_plant.play()
 
 func can_plant() -> bool:
 	var tile_pos: Vector2i = tile_map_layer_ref.local_to_map(global_position)

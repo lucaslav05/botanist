@@ -132,7 +132,9 @@ func putItemBack():
 	locked = true
 	if oldIndex < 0:
 		var emptySlots = slots.filter(func (s): return s.isEmpty())
-		if emptySlots.is_empty(): return
+		if emptySlots.is_empty():
+			locked = false
+			return
 		
 		oldIndex = emptySlots[0].index
 	

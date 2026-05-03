@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cpjipiqubpe3g" path="res://animations/FPlayer 1 idle.png" id="3_sweqy"]
 [ext_resource type="Texture2D" uid="uid://cej1xpkubqgk2" path="res://animations/FPlayer 1 walking.png" id="4_2hs0m"]
 [ext_resource type="PackedScene" uid="uid://bmp1pc6r60g1b" path="res://inventory/inv_ui.tscn" id="4_sweqy"]
+[ext_resource type="AudioStream" uid="uid://2aaxnuajkfcf" path="res://dragon-studio-pop-402323.mp3" id="6_2hs0m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 1.0
@@ -563,3 +564,7 @@ offset_top = -58.0
 offset_right = 22.0
 offset_bottom = 10.0
 scale = Vector2(1.5, 1.5)
+
+[node name="sfx_plant" type="AudioStreamPlayer" parent="." unique_id=721305005]
+stream = ExtResource("6_2hs0m")
+volume_db = -7.0

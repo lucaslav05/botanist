@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://kmxux4b1mchx"]
+
+[ext_resource type="Script" uid="uid://dgtwxhouxsosb" path="res://chest.gd" id="1_8uwsg"]
+[ext_resource type="Texture2D" uid="uid://p31m3nsfggmu" path="res://animations/chest.png" id="1_twpm2"]
+
+[node name="Chest" type="Node2D" unique_id=1775603392]
+script = ExtResource("1_8uwsg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1900062104]
+texture_filter = 1
+position = Vector2(12, -16)
+texture = ExtResource("1_twpm2")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1862570586]
+
+[node name="depot_area" type="Area2D" parent="." unique_id=1972805176]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="depot_area" unique_id=194688765]
+polygon = PackedVector2Array(-10, -20, 44, 6, 18, 24, -38, -4)
+
+[connection signal="body_entered" from="depot_area" to="." method="_on_depot_area_body_entered"]
+[connection signal="body_exited" from="depot_area" to="." method="_on_depot_area_body_exited"]

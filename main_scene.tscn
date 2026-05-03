@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://00xnec7xf2h3" path="res://inventory/items/flower_collectable.tscn" id="5_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://2rmxtc4brgyc" path="res://inventory/hotbar.tscn" id="6_hq1ik"]
 [ext_resource type="Script" uid="uid://htxcgtk2egur" path="res://portal_spawn_timer.gd" id="8_66tet"]
+[ext_resource type="PackedScene" uid="uid://kmxux4b1mchx" path="res://chest.tscn" id="8_66tet"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2c62f"]
 texture = ExtResource("1_0f027")
@@ -102,6 +103,10 @@ offset_bottom = -125.0
 grow_horizontal = 2
 grow_vertical = 0
 scale = Vector2(4.5, 4.5)
+
+[node name="Chest" parent="." unique_id=1775603392 instance=ExtResource("8_66tet")]
+z_index = 1
+position = Vector2(128, -88)
 
 [connection signal="body_entered" from="StairBox" to="Player" method="_on_stair_box_body_entered"]
 [connection signal="body_exited" from="StairBox" to="Player" method="_on_stair_box_body_exited"]

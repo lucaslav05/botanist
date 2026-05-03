@@ -12,6 +12,8 @@ const Portal = preload("res://portals/portal.tscn")
 @export var tile_status = {}
 @export var portal_tile_status = {}
 
+var gameover: bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$AudioStreamPlayer.play()
@@ -25,7 +27,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	if $GameTimer.time_left == 0:
+	if $GameTimer.time_left == 0 && gameover == false:
+		gameover = true
+		$AudioStreamPlayer.stop()
+		$AudioStreamPlayer.stream = load("res://game_over.wav")
+		$AudioStreamPlayer.play()
+		$CanvasLayer/Fade_transition.show()
+		$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_in")
+		await $AudioStreamPlayer.finished
+		
+		
 		get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func plant_seed(v2i: Vector2i, c: Crop):

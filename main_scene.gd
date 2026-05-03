@@ -6,6 +6,8 @@ const Portal = preload("res://portals/portal.tscn")
 @onready var plot_tiles = $WorldTileMap.get_used_cells_by_id(0, Vector2i(2, 0))
 @onready var portal_tiles = $WorldTileMap.get_used_cells_by_id(0, Vector2i(1, 0))
 
+@onready var tile_size = $WorldTileMap.tile_set.tile_size
+
 # stores Vector2i : bool (false if vacant, true if plant is there)
 @export var tile_status = {}
 @export var portal_tile_status = {}
@@ -32,7 +34,7 @@ func plant_seed(v2i: Vector2i):
 
 	# Positioning
 	c.position = $WorldTileMap.map_to_local(v2i)
-	var tile_size = $WorldTileMap.tile_set.tile_size
+	
 	c.get_child(0).position += Vector2(0, tile_size.y*2)
 	c.get_child(0).offset.y = -32
 	
@@ -57,7 +59,13 @@ func spawn_portal_random():
 		p.z_index = 1
 		p.position = tile_pos
 		p.local_pos = portal_plot
-		add_child(p)
+		
+		p.get_child(0).position += Vector2(0, tile_size.y*2)
+		p.get_child(0).offset.y = -32
+		
+		print("z index", p.z_index)
+		print("y sort", p.y_sort_enabled)
+		$Portals.add_child(p)
 
 # DEBUG FUNCTION
 func fill_all_plots():

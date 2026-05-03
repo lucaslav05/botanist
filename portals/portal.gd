@@ -4,7 +4,7 @@ extends Node2D
 @export var existence_time_range = [5, 10]
 
 @onready var existence_timer_ref: Timer = get_child(2)
-@onready var parent_ref: Node2D = get_parent()
+@onready var parent_ref: Node2D = get_parent().get_parent()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

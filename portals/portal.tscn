@@ -61,6 +61,8 @@ radius = 8.0
 height = 60.0
 
 [node name="Portal" type="Node2D" unique_id=1431873867]
+z_index = 1
+y_sort_enabled = true
 script = ExtResource("1_awxq2")
 
 [node name="animation" type="AnimatedSprite2D" parent="." unique_id=1085606774]

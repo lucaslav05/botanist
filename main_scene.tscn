@@ -63,6 +63,10 @@ zoom = Vector2(3, 3)
 z_index = 1
 y_sort_enabled = true
 
+[node name="Portals" type="Node2D" parent="." unique_id=1014937498]
+z_index = 1
+y_sort_enabled = true
+
 [node name="StairBox" type="Area2D" parent="." unique_id=1779090961 groups=["StairBox"]]
 position = Vector2(40, -36)
 

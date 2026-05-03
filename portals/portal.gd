@@ -31,7 +31,10 @@ func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("e"):
 		print("portal: dropping seeds")
 		
-		drop_seeds()
+		var seed_drop_count: int = randi_range(2, 5)
+		
+		for x in range(seed_drop_count):
+			drop_seeds()
 		dismiss_portal()
 		
 

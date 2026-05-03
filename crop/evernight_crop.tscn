@@ -5,9 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://c5htcbvxs017e" path="res://crop/evernight-0001.png" id="2_yff73"]
 [ext_resource type="Texture2D" uid="uid://b2abh85qfne6x" path="res://crop/evernight-0002.png" id="3_74csl"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_reckc"]
-radius = 7.0
-
 [node name="Crop" type="Node2D" unique_id=43826360]
 z_index = 1
 y_sort_enabled = true
@@ -29,8 +26,8 @@ one_shot = true
 
 [node name="harvest_area" type="Area2D" parent="." unique_id=749191236]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="harvest_area" unique_id=805847067]
-shape = SubResource("CircleShape2D_reckc")
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="harvest_area" unique_id=1957192949]
+polygon = PackedVector2Array(0, -7.5, 15, 0, 0, 7.5, -15, 0)
 
 [connection signal="body_entered" from="harvest_area" to="." method="_on_harvest_body_entered"]
 [connection signal="body_exited" from="harvest_area" to="." method="_on_harvest_body_exited"]

@@ -1,5 +1,8 @@
 extends Node2D
 
+@onready var chest_close: Texture2D = preload("res://animations/chest.png")
+@onready var chest_open: Texture2D = preload("res://animations/chest_open.png")
+
 @onready var inventory: Inv = preload("res://inventory/playerinv.tres")
 
 var player_in_area = false
@@ -35,7 +38,7 @@ func _on_depot_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		print("Player entered Chest")
 		player_in_area = true
-		$Sprite2D.texture = "res://animations/chest_open.png"
+		$Sprite2D.texture = chest_open
 		player = body
 
 
@@ -43,4 +46,4 @@ func _on_depot_area_body_exited(body: Node2D) -> void:
 	if body.name == "Player":
 		print("Player exited Chest")
 		player_in_area = false
-		$Sprite2D.texture = "res://animations/chest.png"
+		$Sprite2D.texture = chest_close

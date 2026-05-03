@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_is1pu")
+pointValue = 15
 name = "Evernight Flower"
 texture = ExtResource("2_is1pu")
 metadata/_custom_type_script = "uid://ccjn7l6q87edt"

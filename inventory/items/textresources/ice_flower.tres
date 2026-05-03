@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_pvesb")
+pointValue = 15
 name = "Ice Flower"
 texture = ExtResource("2_pvesb")
 maxAmountPrStack = 10

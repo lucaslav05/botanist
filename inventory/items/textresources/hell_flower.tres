@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_n4d7w")
+pointValue = 10
 name = "Hell Flower"
 texture = ExtResource("2_w4atq")
 metadata/_custom_type_script = "uid://ccjn7l6q87edt"

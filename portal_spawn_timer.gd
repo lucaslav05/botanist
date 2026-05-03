@@ -1,14 +1,14 @@
 extends Timer
 
-@export var wait_range = [10, 20]
+@export var wait_range = [5, 10]
 @export var timer_wait : int
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	print("timer exists")
-	var timer_wait = randi_range(wait_range[0], wait_range[1])
+	#var timer_wait = randi_range(wait_range[0], wait_range[1])
 	print("initial wait: ", timer_wait)
-	wait_time = timer_wait
+	wait_time = 1
 	start()
 
 

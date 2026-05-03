@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var local_pos: Vector2i
-@export var existence_time_range = [10, 20]
+@export var existence_time_range = [20, 30]
 
 const evernight_seed = preload("res://inventory/items/evernight_seed_collectable.tscn")
 const hell_seed = preload("res://inventory/items/hell_seed_collectable.tscn")

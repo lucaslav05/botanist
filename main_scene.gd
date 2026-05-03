@@ -20,6 +20,7 @@ var highest_record = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$GameTimer.start(60)
 	gameover = false
 	$CanvasLayer/toggleInstructions.show
 	$CanvasLayer/instructionBoard.hide()
@@ -66,14 +67,16 @@ func _process(_delta):
 		get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func get_highest(score: int):
-	var file = FileAccess.open(SAVEFILE, FileAccess.READ)
 	if FileAccess.file_exists(SAVEFILE):
+		var file = FileAccess.open(SAVEFILE, FileAccess.READ)
 		var record = file.get_32()
-		if score <= record:
-			highest_record = highest_record
+		file.close()
+		if score > record:
+			highest_record = score
+		else:
+			highest_record = record
 	else:
-		highest_record = score
-	
+			highest_record = score
 
 
 func plant_seed(v2i: Vector2i, c: Crop):
@@ -112,3 +115,18 @@ func spawn_portal_random():
 		print("z index", p.z_index)
 		print("y sort", p.y_sort_enabled)
 		$Portals.add_child(p)
+
+
+
+func _on_game_timer_timeout() -> void:
+	var file = FileAccess.open(SAVEFILE, FileAccess.WRITE_READ)
+	get_highest(Global.score)
+	file.store_32(highest_record)
+	$AudioStreamPlayer.stop()
+	$AudioStreamPlayer.stream = load("res://game_over.wav")
+	$AudioStreamPlayer.play()
+	$CanvasLayer/Fade_transition.show()
+	$CanvasLayer/Fade_transition/AnimationPlayer.play("fade_in")
+	await $AudioStreamPlayer.finished
+		
+	get_tree().change_scene_to_file("res://main_menu.tscn")

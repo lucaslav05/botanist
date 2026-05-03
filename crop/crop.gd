@@ -15,6 +15,9 @@ var location : Vector2i
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if state == "no flower":
+		var growing_time: int = randi_range(20,30)
+		$growth_timer.wait_time = growing_time
+		print(growing_time)
 		$growth_timer.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

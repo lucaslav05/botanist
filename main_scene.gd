@@ -56,6 +56,7 @@ func spawn_portal_random():
 		var tile_pos: Vector2i = get_child(0).map_to_local(portal_plot)
 		p.z_index = 1
 		p.position = tile_pos
+		p.local_pos = portal_plot
 		add_child(p)
 
 # DEBUG FUNCTION

@@ -1,6 +1,6 @@
 extends Timer
 
-@export var wait_range = [1, 1]
+@export var wait_range = [10, 20]
 @export var timer_wait : int
 
 # Called when the node enters the scene tree for the first time.

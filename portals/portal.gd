@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var local_pos: Vector2i
-@export var existence_time_range = [5, 10]
+@export var existence_time_range = [10, 20]
 
 const evernight_seed = preload("res://inventory/items/evernight_seed_collectable.tscn")
 const hell_seed = preload("res://inventory/items/hell_seed_collectable.tscn")
@@ -26,13 +26,9 @@ func _process(delta):
 		parent_ref.portal_tile_status[local_pos] = false
 		dismiss_portal()
 		
-	if player_in_area:
-		print("portal type: ", $animation.animation)
 	if player_in_area and Input.is_action_just_pressed("e"):
 		print("portal: dropping seeds")
-		
 		var seed_drop_count: int = randi_range(2, 5)
-		
 		for x in range(seed_drop_count):
 			drop_seeds()
 		dismiss_portal()
@@ -61,9 +57,7 @@ func dismiss_portal():
 
 func _on_area_2d_body_entered(body):
 	if body.name == "Player":
-		print("Player entered: portal range")
 		player_in_area = true
 
 func _on_area_2d_body_exited(body):
-	print("Player exited: portal range")
 	player_in_area = false

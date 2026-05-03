@@ -76,3 +76,6 @@ frame_progress = 0.76148754
 z_index = 3
 position = Vector2(1, -30)
 shape = SubResource("CapsuleShape2D_awxq2")
+
+[node name="existence_timer" type="Timer" parent="." unique_id=1495076004]
+one_shot = true

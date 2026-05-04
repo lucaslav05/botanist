@@ -20,7 +20,7 @@ var highest_record = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$GameTimer.start(60)
+	$GameTimer.start(360)
 	gameover = false
 	$CanvasLayer/toggleInstructions.show
 	$CanvasLayer/instructionBoard.hide()
